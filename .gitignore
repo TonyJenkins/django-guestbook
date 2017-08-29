@@ -106,5 +106,4 @@ ENV/
 
 # Project
 
-db.sqlite3
-
+*.sqlite3
