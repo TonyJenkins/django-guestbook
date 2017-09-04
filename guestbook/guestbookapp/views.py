@@ -22,8 +22,7 @@ def index (request):
     form = EntryForm ()
     context ['form'] = form
 
-    response = render (request, 'guestbookapp/index.html', context)
-    return response
+    return render (request, 'guestbookapp/index.html', context)
 
 def delete_entry (request, entry_id):
 
@@ -35,7 +34,9 @@ def update_entry (request, entry_id):
 
     entry = get_object_or_404 (Entry, pk = entry_id)
 
+    context = {}
 
+    context ['entries'] = Entry.objects.all ()
 
     if request.method ==  'POST':
         form = EntryForm (request.POST, instance = entry)
@@ -49,14 +50,6 @@ def update_entry (request, entry_id):
         return redirect (reverse ('index'))
 
     if request.method == 'GET':
+        context ['form'] = EntryForm (instance = entry)
 
-        context = {}
-
-        entry_list = Entry.objects.all ()
-        context ['entries'] = entry_list
-
-        form = EntryForm (instance = entry)
-        context ['form'] = form
-
-        response = render (request, 'guestbookapp/index.html', context)
-        return response
+        return render (request, 'guestbookapp/index.html', context)
