@@ -29,13 +29,12 @@
        </p>
     {% endif %}
 
-    <p></p>
-    <p></p>
+    <h1>New Comment</h1>
 
     <form id="new_entry_form" method="post" action="">
         {% csrf_token %}
         {{ form }}
-
-        <input type="submit" name="submit" value="Submit Comment" />
+        <p></p>
+        <input type="submit" name="submit" value="Confirm" />
     </form>
 {% endblock %}
