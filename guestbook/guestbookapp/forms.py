@@ -3,11 +3,8 @@ from guestbookapp.models import Entry
 
 class EntryForm (forms.ModelForm):
 
-    # def __init__ (self, *args, **kwargs):
-    #     print ('#################', kwargs)
-    #     self.user = kwargs.pop ('user')
-    #     self.comment = kwargs.pop ('comment')
-    #     super (EntryForm, self).__init__ (*args, **kwargs)
+    user = forms.CharField (label = 'User', widget = forms.TextInput (attrs = {'size' : 32}))
+    comment = forms.CharField (label = 'Your Comment', widget = forms.TextInput (attrs = {'size' : 64}))
 
     class Meta:
         model = Entry
