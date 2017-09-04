@@ -12,12 +12,13 @@
 
         <table>
             <tr>
-                <th>User</th><th>Comment</th><th></th><th></th>
+                <th>User</th><th>Comment</th><th>Date</th><th></th><th></th>
             </tr>
             {% for entry in entries %}
                 <tr>
                     <td>{{ entry.user }}</td>
                     <td>{{ entry.comment }}</td>
+                    <td>{{ entry.updated_at }}</td>
                     <td><a href="/guestbook/update/{{ entry.id }}">Update</a></td>
                     <td><a href="/guestbook/delete/{{ entry.id }}">Delete</a></td>
                 </tr>
