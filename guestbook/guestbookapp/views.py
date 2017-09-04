@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.core.urlresolvers import reverse
+from django.shortcuts import render, redirect
 
 from guestbookapp.models import Entry
 from guestbookapp.forms import EntryForm
@@ -23,3 +24,9 @@ def index (request):
 
     response = render (request, 'guestbookapp/index.html', context)
     return response
+
+def delete_entry (request, entry_id):
+
+    Entry.objects.filter (id = entry_id).delete ()
+
+    return redirect (reverse ('index'))
