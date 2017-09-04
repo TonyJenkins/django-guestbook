@@ -8,4 +8,22 @@
     Current comments in the guestbook:
 </p>
 
+    {% if entries %}
+
+        <table>
+            <tr>
+                <th>User</th><th>Comment</th>
+            </tr>
+            {% for entry in entries %}
+                <tr>
+                    <td>{{ entry.user }}</td>
+                    <td>{{ entry.comment }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+       <p>
+        The guestbook is currently empty. What a pity.
+       </p>
+    {% endif %}
 {% endblock %}
