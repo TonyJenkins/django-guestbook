@@ -26,4 +26,14 @@
         The guestbook is currently empty. What a pity.
        </p>
     {% endif %}
+
+    <p></p>
+    <p></p>
+
+    <form id="new_entry_form" method="post" action="">
+        {% csrf_token %}
+        {{ form }}
+
+        <input type="submit" name="submit" value="Add Comment" />
+    </form>
 {% endblock %}
