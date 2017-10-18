@@ -19,11 +19,17 @@ If using SQLite, create the database:
 
 `$ python3 manage.py makemigrations`
 
-`$ python3 manage,py migrate`
+`$ python3 manage.py migrate`
 
 The program `populate_guestbook.py` can be used
 load some sample data. (There is also a
 `JSON` file in `fixtures`.)
+
+`$ python3 populate_guestbook.py`
+
+(The program includes some random pauses to 
+prevent all the initial comments being at
+precisely the same time.)
 
 Then start the development server:
 
