@@ -17,9 +17,10 @@ permissions. Settings for these are in `settings.py`.
 
 If using SQLite, create the database:
 
-`$ python3 manage.py makemigrations`
-
 `$ python3 manage.py migrate`
+
+(Migrations are in the repo, so this is
+sufficient.)
 
 The program `populate_guestbook.py` can be used
 load some sample data. (There is also a
